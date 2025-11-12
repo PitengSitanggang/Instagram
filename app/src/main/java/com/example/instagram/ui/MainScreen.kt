@@ -24,7 +24,7 @@ import com.example.instagram.ui.home.HomeScreen
 import com.example.instagram.ui.navigation.BottomNavItem
 import com.example.instagram.ui.navigation.bottomNavItems
 import com.example.instagram.ui.profile.ProfileScreen
-;
+import androidx.compose.material3.MaterialTheme
 import com.example.instagram.ui.reels.ReelsScreen
 import com.example.instagram.ui.search.SearchScreen
 
@@ -50,14 +50,15 @@ fun BottomNavigationBar(navController: NavHostController) {
     val currentRoute = navBackStackEntry?.destination?.route
 
     BottomNavigation(
-        backgroundColor = Color.White,
-        contentColor = Color.Black,
+        backgroundColor = MaterialTheme.colorScheme.background,
+
+        contentColor = Color.White,
+
         elevation = 8.dp
     ) {
         bottomNavItems.forEach { item ->
             BottomNavigationItem(
                 icon = {
-                    // Jika Profile, gunakan gambar bulat
                     if (item is BottomNavItem.Profile) {
                         Image(
                             painter = painterResource(id = R.drawable.my_profile),
@@ -67,7 +68,11 @@ fun BottomNavigationBar(navController: NavHostController) {
                                 .clip(CircleShape)
                                 .border(
                                     width = if (currentRoute == item.route) 2.dp else 0.dp,
-                                    color = if (currentRoute == item.route) Color.Black else Color.Transparent,
+
+                                    color = if (currentRoute == item.route)
+                                        Color.Black
+                                    else
+                                        Color.Transparent,
                                     shape = CircleShape
                                 ),
                             contentScale = ContentScale.Crop
@@ -89,13 +94,14 @@ fun BottomNavigationBar(navController: NavHostController) {
                         restoreState = true
                     }
                 },
-                selectedContentColor = Color.Black,
+                selectedContentColor = Color.White,
+
+
                 unselectedContentColor = Color.Gray
             )
         }
     }
 }
-
 @Composable
 fun NavigationGraph(
     navController: NavHostController,
