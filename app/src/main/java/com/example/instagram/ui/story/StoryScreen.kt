@@ -50,7 +50,7 @@ fun StorySection(
     ){
         item{
             Column (
-                horizontalAlignment = Alignment.CenterHorizontally,
+                horizontalAlignment = Alignment.CenterHorizontally ,
                 modifier = Modifier
                     .padding(end = 8.dp)
                     .clickable { onAddStoryClick() }

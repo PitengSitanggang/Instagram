@@ -24,6 +24,7 @@ import com.example.instagram.ui.home.HomeScreen
 import com.example.instagram.ui.navigation.BottomNavItem
 import com.example.instagram.ui.navigation.bottomNavItems
 import com.example.instagram.ui.profile.ProfileScreen
+;
 import com.example.instagram.ui.reels.ReelsScreen
 import com.example.instagram.ui.search.SearchScreen
 

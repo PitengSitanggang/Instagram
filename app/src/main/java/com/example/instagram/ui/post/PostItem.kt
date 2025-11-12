@@ -45,7 +45,9 @@ fun PostItem(
     val pagerState = rememberPagerState(pageCount = {post.imageResList.size})
     var isSaved by remember { mutableStateOf(false) }
 
-    Column(modifier = Modifier.fillMaxWidth().background(MaterialTheme.colorScheme.background)) {
+    Column(modifier = Modifier
+        .fillMaxWidth()
+        .background(MaterialTheme.colorScheme.background)) {
         // Header (Profile + Username)
         Row(
             modifier = Modifier
@@ -119,12 +121,12 @@ fun PostItem(
         Row(
             modifier = Modifier
                 .fillMaxWidth()
-                .padding(8.dp),
+                .padding(2.dp),
             horizontalArrangement = Arrangement.SpaceBetween,
             verticalAlignment = Alignment.CenterVertically
         ) {
             Row(
-                horizontalArrangement = Arrangement.spacedBy(16.dp),
+                horizontalArrangement = Arrangement.spacedBy(5.dp),
                 verticalAlignment = Alignment.CenterVertically
             ){
                 // Like
@@ -138,7 +140,7 @@ fun PostItem(
                         tint = MaterialTheme.colorScheme.onBackground,
                         modifier = Modifier.size(25.dp)
                     )
-                    Spacer(modifier = Modifier.width(4.dp))
+                    Spacer(modifier = Modifier.width(3.dp))
                     Text(
                         text = "${post.commentCount}",
                         fontWeight = FontWeight.Medium,
@@ -155,7 +157,7 @@ fun PostItem(
                         tint = MaterialTheme.colorScheme.onBackground,
                         modifier = Modifier.size(25.dp)
                     )
-                    Spacer(modifier = Modifier.width(4.dp))
+                    Spacer(modifier = Modifier.width(3.dp))
                     Text(
                         text = "${post.repostCount}",
                         fontWeight = FontWeight.Medium,
@@ -172,7 +174,7 @@ fun PostItem(
                         tint = MaterialTheme.colorScheme.onBackground,
                         modifier = Modifier.size(26.dp)
                     )
-                    Spacer(modifier = Modifier.width(4.dp))
+                    Spacer(modifier = Modifier.width(3.dp))
                     Text(
                         text = "${post.shareCount}",
                         fontWeight = FontWeight.Medium,
@@ -198,7 +200,7 @@ fun PostItem(
             maxLines = 2,
             overflow = TextOverflow.Ellipsis,
             color = MaterialTheme.colorScheme.onBackground,
-            modifier = Modifier.padding(horizontal = 12.dp, vertical = 4.dp)
+            modifier = Modifier.padding(horizontal = 12.dp, vertical = 2.dp)
         )
 
         Spacer(modifier = Modifier.height(12.dp))
@@ -237,7 +239,6 @@ fun LikeButtonAnimated(
             )
 
         }
-        Spacer(modifier = Modifier.width(4.dp))
         Text(
             text = likeCount.toString(),
             fontWeight = FontWeight.Medium,
